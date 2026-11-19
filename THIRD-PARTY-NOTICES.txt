@@ -1,0 +1,73 @@
+Clipper - third-party software notices
+
+Clipper is free software for personal use. It is built on the open-source projects below. Thank you to their authors.
+Full license texts are available at the links given. Clipper itself makes shorts on your own PC; your videos are not
+uploaded anywhere.
+
+------------------------------------------------------------------------------------------------------------------------
+FFmpeg (video and audio processing)                                   GNU Lesser General Public License v2.1 or later
+------------------------------------------------------------------------------------------------------------------------
+Clipper ships an unmodified LGPL build of FFmpeg as a separate program (ffmpeg.exe / ffprobe in the engine folder).
+- FFmpeg source code: https://github.com/FFmpeg/FFmpeg (the release branch named in "ffmpeg -version")
+- Build scripts used (LGPL configuration, no GPL parts): https://github.com/BtbN/FFmpeg-Builds
+- License text: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
+You may replace ffmpeg.exe with your own build of FFmpeg. The Python packages PyAV and OpenCV (below) also include
+LGPL FFmpeg libraries, with the same source and license.
+
+------------------------------------------------------------------------------------------------------------------------
+Speech recognition
+------------------------------------------------------------------------------------------------------------------------
+- Whisper "small" model weights - OpenAI - MIT License - https://github.com/openai/whisper
+- faster-whisper - SYSTRAN - MIT License - https://github.com/SYSTRAN/faster-whisper
+  (model in CTranslate2 format: https://huggingface.co/Systran/faster-whisper-small)
+- CTranslate2 - OpenNMT - MIT License - https://github.com/OpenNMT/CTranslate2
+- Silero VAD (voice detector, inside faster-whisper) - MIT License - https://github.com/snakers4/silero-vad
+- tokenizers - Hugging Face - Apache License 2.0 - https://github.com/huggingface/tokenizers
+- huggingface_hub - Hugging Face - Apache License 2.0 - https://github.com/huggingface/huggingface_hub
+
+------------------------------------------------------------------------------------------------------------------------
+Vision and sound models
+------------------------------------------------------------------------------------------------------------------------
+- YuNet face detector (OpenCV Model Zoo) - MIT License - https://github.com/opencv/opencv_zoo
+- SFace face recognizer (OpenCV Model Zoo) - Apache License 2.0 - https://github.com/opencv/opencv_zoo
+- NanoDet-Plus person detector (OpenCV Model Zoo) - Apache License 2.0 - https://github.com/RangiLyu/nanodet
+- YOLOX-S person detector (OpenCV Model Zoo) - Apache License 2.0 - https://github.com/Megvii-BaseDetection/YOLOX
+- YAMNet sound events - Google - Apache License 2.0 - https://github.com/tensorflow/models/tree/master/research/audioset/yamnet
+- OpenCV - Apache License 2.0 - https://github.com/opencv/opencv
+- ONNX Runtime - Microsoft - MIT License - https://github.com/microsoft/onnxruntime
+
+------------------------------------------------------------------------------------------------------------------------
+GPU edition only
+------------------------------------------------------------------------------------------------------------------------
+- NVIDIA cuBLAS runtime libraries - redistributed under the NVIDIA CUDA Toolkit EULA (redistributable files) -
+  https://docs.nvidia.com/cuda/eula/
+
+------------------------------------------------------------------------------------------------------------------------
+Caption fonts                                                                    SIL Open Font License 1.1 (OFL)
+------------------------------------------------------------------------------------------------------------------------
+Noto Sans family (Google), Montserrat, Poppins, Archivo Black, Anton, Bebas Neue, Bangers.
+License text: https://openfontlicense.org (a copy of each font's license is in the engine's fonts folder).
+
+------------------------------------------------------------------------------------------------------------------------
+Program and libraries
+------------------------------------------------------------------------------------------------------------------------
+- Python - Python Software Foundation License - https://www.python.org
+- PyInstaller bootloader - GPL v2 with the bootloader exception (allows distributing the built program) -
+  https://github.com/pyinstaller/pyinstaller
+- PyAV - BSD 3-Clause - https://github.com/PyAV-Org/PyAV
+- NumPy - BSD 3-Clause - https://numpy.org
+- Anthropic Python SDK - MIT License - https://github.com/anthropics/anthropic-sdk-python
+- pydantic - MIT License - https://github.com/pydantic/pydantic
+- python-dotenv - BSD 3-Clause - https://github.com/theskumar/python-dotenv
+- PyYAML - MIT License - https://github.com/yaml/pyyaml
+- tqdm - MPL 2.0 / MIT - https://github.com/tqdm/tqdm
+- Tauri - MIT or Apache License 2.0 - https://tauri.app
+- React - MIT License - https://react.dev
+- Microsoft Edge WebView2 runtime - Microsoft - installed by Windows / the WebView2 installer
+
+------------------------------------------------------------------------------------------------------------------------
+Claude AI (optional)
+------------------------------------------------------------------------------------------------------------------------
+With your own Anthropic API key, Clipper sends the spoken words of your video as text (and a few still frames for
+action videos) to Anthropic's Claude to pick moments and check captions. Use of Claude is governed by Anthropic's
+terms: https://www.anthropic.com/legal. Without a key, nothing is sent anywhere.
